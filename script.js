@@ -1,4 +1,4 @@
-// // // Задание 1
+// Задание 1
 
 const arr1  = [1, 5, 4, 10, 0, 3];
 
@@ -7,18 +7,18 @@ for (let i = 0; i < arr1.length; i++) {
 	if (arr1[i] == 10) break;
 };
 
-// // Задание 2
+ // Задание 2
 
 const arr2 = [1, 5, 4, 10, 0, 3];
 console.log(arr2.indexOf(4));
 
-// // Задание 3
+// Задание 3
 
 const arr3 = [1, 3, 5, 10, 20];
 
 console.log(arr3.join(' '))
 
-// // через оператор ...
+// через оператор ...
 
 console.log(...arr3);
 
@@ -57,7 +57,7 @@ console.log(arr4);
 // Задание 6
 
 const arr5 =  [1, 1, 1]
-arr4.push(2,2,2)
+arr5.push(2,2,2)
 
 console.log(arr5)
 
@@ -65,7 +65,7 @@ console.log(arr5)
 
 
 const arr6 = [9, 8, 7, 'a', 6, 5]
-arr5.sort().splice(-1)
+arr6.sort().splice(-1)
 
 
 console.log(arr6)
@@ -125,15 +125,15 @@ console.log(arr8.flat());
 const numbers3 = []; 
 
 for (let i = 0; i < 10; i ++) { 
-   numbers3[i] = Math.floor(Math.random()*(max-min) + min);
+   numbers3.push(Math.floor(Math.random()*(max-min) + min));
   	}
 
-for (let i = 0; i < numbers3.length; i++) {
-	console.log(numbers3[i]+numbers3[i+1]);
+for (let i = 0; i < numbers3.length-1; i++) { // изменил счетчик до предпосленего значения значения,теперь оно не выводится
+	console.log(`сумма ${i}-го и ${i+1}-го элемента равна ${numbers3[i]+numbers3[i+1]}`);
 	
 
 }
-  console.log(numbers3)
+  console.log(`[${numbers3.join(', ')}]`)
 
 
 
