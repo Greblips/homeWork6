@@ -25,18 +25,24 @@ console.log(...arr3);
 
 // Задание 4
 
-const min = 1;
-const max = 11;
-const numbers = [];
 
-for (let i = 0; i < 12; i ++) { 
-   numbers[i] = Math.floor(Math.random()*(max-min) + min);
+
+let numbers = []
+
+const arrRandom = (arr, length, min, max) =>{
+  for (let i=0; i < length; i++) {
+    arr[i] = Math.round(Math.random()*(max-min) + min);
+   
   }
+}
+arrRandom(numbers, 10 , 0, 10 ) 
+console.log(numbers)
+
 
  const numbersOdd = numbers.filter(oddItem => {
     return oddItem % 2 === 0
 })
-console.log(numbers);
+
 console.log(numbersOdd)
 
 // Задание 5
@@ -77,12 +83,19 @@ const arr7 = [9, 8, 7, 6, 5]
 
 const userNumber = Number(prompt('Ведите число'));
 
-function userNumberSearh(element) {
-	
-	return element === userNumber
+const findNumber = (array) => {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === userNumber) {
+      return console.log('число есть в массиве')
+    }
   }
 
-console.log( arr7.find(userNumberSearh))
+  return console.log('Числа нет в массиве')
+};
+
+console.log(findNumber(arr7))
+
+
 
 
 //  Задание 9
@@ -98,18 +111,16 @@ console.log(reverseString)
 
 
 const numbers2 = []; 
+arrRandom(numbers2, 6 , 1, 10 ) 
+console.log(numbers2)
 
-for (let i = 0; i < 6; i ++) { 
-   numbers2[i] = Math.floor(Math.random()*(max-min) + min);
-  }
 
   const getAverage = (numbers2) => {
 	const sum = numbers2.reduce((acc, number) => acc + number, 0);
 	const length = numbers2.length;
 	return sum / length;
-  };
+  }
 
-  console.log(numbers2)
   console.log(getAverage(numbers2))
 
 
@@ -119,16 +130,18 @@ const arr8 =[[1, 2, 3,],[4, 5, 6]]
 
 console.log(arr8.flat());
 
-// Задание 12
+
+
+ // Задание 12
 
 
 const numbers3 = []; 
 
-for (let i = 0; i < 10; i ++) { 
-   numbers3.push(Math.floor(Math.random()*(max-min) + min));
-  	}
+arrRandom(numbers3, 10 , 1, 10 ) 
+console.log(numbers3)
 
-for (let i = 0; i < numbers3.length-1; i++) { // изменил счетчик до предпосленего значения значения,теперь оно не выводится
+
+for (let i = 0; i < numbers3.length-1; i++) { // изменил счетчик до предпосленео значения значения,теперь оно не выводится
 	console.log(`сумма ${i}-го и ${i+1}-го элемента равна ${numbers3[i]+numbers3[i+1]}`);
 	
 
